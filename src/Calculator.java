@@ -153,26 +153,25 @@ class Calculator extends WindowAdapter implements ActionListener{
             l1.setText(z);
         }
 
-        if(e.getSource()==bpts){  //ADD DECIMAL PTS
+        if(e.getSource()==bpts){
             zt=l1.getText();
             z=zt+".";
             l1.setText(z);
         }
-        if(e.getSource()==bneg){ //FOR NEGATIVE
+        if(e.getSource()==bneg){
             zt=l1.getText();
             z="-"+zt;
             l1.setText(z);
         }
 
-        if(e.getSource()==bback){  // FOR  BACKSPACE
+        if(e.getSource()==bback){
             zt=l1.getText();
             try{
                 z=zt.substring(0, zt.length()-1);
             }catch(StringIndexOutOfBoundsException f){return;}
             l1.setText(z);
         }
-        //AIRTHMETIC BUTTON
-        if(e.getSource()==badd){                     //FOR ADDITION
+        if(e.getSource()==badd){
             try{
                 num1=Double.parseDouble(l1.getText());
             }catch(NumberFormatException f){
@@ -183,7 +182,7 @@ class Calculator extends WindowAdapter implements ActionListener{
             l1.setText(z);
             check=1;
         }
-        if(e.getSource()==bsub){                    //FOR SUBTRACTION
+        if(e.getSource()==bsub){
             try{
                 num1=Double.parseDouble(l1.getText());
             }catch(NumberFormatException f){
@@ -194,7 +193,7 @@ class Calculator extends WindowAdapter implements ActionListener{
             l1.setText(z);
             check=2;
         }
-        if(e.getSource()==bmult){                   //FOR MULTIPLICATION
+        if(e.getSource()==bmult){
             try{
                 num1=Double.parseDouble(l1.getText());
             }catch(NumberFormatException f){
@@ -205,7 +204,7 @@ class Calculator extends WindowAdapter implements ActionListener{
             l1.setText(z);
             check=3;
         }
-        if(e.getSource()==bdiv){                   //FOR DIVISION
+        if(e.getSource()==bdiv){
             try{
                 num1=Double.parseDouble(l1.getText());
             }catch(NumberFormatException f){
@@ -216,7 +215,7 @@ class Calculator extends WindowAdapter implements ActionListener{
             l1.setText(z);
             check=4;
         }
-        if(e.getSource()==bmod){                  //FOR MOD/REMAINDER
+        if(e.getSource()==bmod){
             try{
                 num1=Double.parseDouble(l1.getText());
             }catch(NumberFormatException f){
@@ -227,7 +226,6 @@ class Calculator extends WindowAdapter implements ActionListener{
             l1.setText(z);
             check=5;
         }
-        //RESULT BUTTON
         if(e.getSource()==bcalc){
             try{
                 num2=Double.parseDouble(l1.getText());
@@ -247,7 +245,6 @@ class Calculator extends WindowAdapter implements ActionListener{
                 xd =num1%num2;
             l1.setText(String.valueOf(xd));
         }
-        //FOR CLEARING THE LABEL and Memory
         if(e.getSource()==bclr){
             num1=0;
             num2=0;
@@ -258,7 +255,6 @@ class Calculator extends WindowAdapter implements ActionListener{
         }
 
     }
-    //MAIN METHOD where objects of MyCalc is instantaiated
     public static void main(String args[]){
         new Calculator();
     }
